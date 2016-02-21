@@ -1,0 +1,22 @@
+<%= form_for @game do |f| %>
+	<h3> Choose your game </h3>
+	<p>
+		<%= f.label "Mafia Game" %>
+		<%= f.radio_button(:code, 0)%>
+	</p>
+	<p>
+		<%= f.label "Title" %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label "Password" %>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.label "Capacity" %>
+		<%= f.number_field(:capacity, in: 6..16) %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
