@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :mafia_games, only: [:show]
   end
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

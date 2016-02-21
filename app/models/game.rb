@@ -1,5 +1,6 @@
 class Game < ActiveRecord::Base
-	has_many :MafiaGames
+	belongs_to :user
+	has_one :mafiagame
 
 	validates :title, :capacity, presence: true
 	validates :capacity, :code, numericality: {only_integer: true}

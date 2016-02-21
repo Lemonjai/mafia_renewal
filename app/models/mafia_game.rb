@@ -1,4 +1,4 @@
 class MafiaGame < ActiveRecord::Base
-	belongs_to :Game
-
+	belongs_to :game
+	belongs_to :user, through: :game
 end
