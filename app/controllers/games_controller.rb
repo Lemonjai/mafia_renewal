@@ -29,7 +29,7 @@ class GamesController < ApplicationController
   	@game = Game.find(params[:id])
 
   	if @game.update_attributes(game_params)
-  		redirect_to product_path(@game)
+  		redirect_to game_path(@game)
   	else
   		render :edit
   	end

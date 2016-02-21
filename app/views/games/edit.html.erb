@@ -1,2 +1,7 @@
-<h1>Games#edit</h1>
-<p>Find me in app/views/games/edit.html.erb</p>
+<h1>Edit <%= @game.title %></h1>
+
+<p>
+	<%= link_to "Back", @game %>
+</p>
+
+<%= render 'form' %>
