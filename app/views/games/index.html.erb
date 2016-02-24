@@ -1,11 +1,20 @@
-<h1>Game List</h1>
 
-<%= link_to "Create Game", new_game_path %>
+    <% if current_user %>
 
-<% @games.each do |game| %>
-	<p><%= link_to("#{game.title}", game_path(game.id)) %> |
-	<% if (game.code == 0)%>
-		<%= "Mafia Game" %>
+		<%= link_to "Create Game", new_game_path %>
+
+		<% @games.each do |game| %>
+			<p><%= link_to("#{game.title}", game_path(game.id)) %> |
+			<% if (game.code == 0)%>
+				<%= "Mafia Game" %>
+			<% end %>
+			<%= game.current_number %> / <%= game.capacity %> </p>
+			Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+		<% end %>
+	<% else %>
+		<p class="userinfo">
+			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+		 
+		</p>
 	<% end %>
-	<%= game.current_number %> / <%= game.capacity %> </p>
-<% end %>
+
